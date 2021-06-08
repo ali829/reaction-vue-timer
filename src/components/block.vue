@@ -35,6 +35,7 @@
             },
             endTimer(){
                 clearInterval(this.timer);
+                this.$emit('yourreaction',this.timeReaction);
             }
         }
 
