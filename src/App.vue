@@ -1,6 +1,6 @@
 <template>
     <h1>reaction timer</h1>
-    <button @click="play" >play</button>
+    <button @click="play" :disabled="isPlay">play</button>
     <result v-if="showResult" :reactionScore="result" />
     <block v-if="isPlay" :delay="delay" @yourreaction="endGame" />
 </template>
@@ -54,5 +54,9 @@ button{
   outline: none;
   cursor: pointer;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);;
+}
+button[disabled]{
+    opacity: 0.4;
+    cursor: not-allowed;
 }
 </style>
