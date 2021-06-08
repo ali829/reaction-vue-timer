@@ -1,5 +1,5 @@
 <template>
-    <div class="block" v-if="showBlock" @click="endTimer">
+    <div class="block-container" v-if="showBlock" @click="endTimer">
         <p>Click me</p>
     </div>
 </template>
@@ -27,15 +27,15 @@
                 this.startTimer();
             }, this.delay);
         },
-        methods:{
-            startTimer(){
-                this.timer = setInterval(()=>{
+        methods: {
+            startTimer() {
+                this.timer = setInterval(() => {
                     this.timeReaction += 10;
-                } , 10)
+                }, 10)
             },
-            endTimer(){
+            endTimer() {
                 clearInterval(this.timer);
-                this.$emit('yourreaction',this.timeReaction);
+                this.$emit('yourreaction', this.timeReaction);
             }
         }
 
@@ -50,5 +50,11 @@
         margin: 40px auto;
         background-color: cadetblue;
         border-radius: 10px;
+    }
+
+    .block-container {
+        height: 100vh;
+        width: 100vw;
+        background-color: #4aa96c;
     }
 </style>
