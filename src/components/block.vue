@@ -1,6 +1,8 @@
 <template>
     <div class="block-container" v-if="showBlock" @click="endTimer">
-        <p>Click me</p>
+        <div>
+          <h1>click!</h1>
+        </div>
     </div>
 </template>
 
@@ -43,18 +45,24 @@
     }
 </script>
 
-<style>
-    .block {
-        width: 400px;
-        padding: 100px 0;
-        margin: 40px auto;
-        background-color: cadetblue;
-        border-radius: 10px;
-    }
+<style scoped>
 
     .block-container {
         height: 100vh;
         width: 100vw;
-        background-color: #4aa96c;
+        background-color: #309975;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .block-container  h1{
+      color: #ffffff;
+      font-size: 4em;
+      margin-bottom: 10px;
+      text-transform: capitalize;
+      font-family: "Agency FB";
+    }
+    .block-container{
+
     }
 </style>
